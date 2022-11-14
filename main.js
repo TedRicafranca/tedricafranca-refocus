@@ -19,11 +19,15 @@ export var newsList = [
 export function search() {
   //inputValue is the variable that contains the search string
   const inputValue = document.getElementById("search-input").value;  
+  
+  //const inputValue = searchval;  For testing
   var keyword = inputValue.toLowerCase(); // switch search value to lower case
   var searchedList = newsList.filter(arraylist => arraylist.toLowerCase().indexOf(keyword) > -1); //to Lower case to match
    
+
   return searchedList; //return filtered array list
 }
+
 
 export function sort(type) {
   if (type == "ascending") {
@@ -39,3 +43,4 @@ export function sort(type) {
 //needed to install live server encountered error on chrome browser
 //npm install -g live-server
 //live-server
+
