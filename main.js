@@ -18,14 +18,24 @@ export var newsList = [
 
 export function search() {
   //inputValue is the variable that contains the search string
- 
+  const inputValue = document.getElementById("search-input").value;  
+  var keyword = inputValue.toLowerCase(); // switch search value to lower case
+  var searchedList = newsList.filter(arraylist => arraylist.toLowerCase().indexOf(keyword) > -1); //to Lower case to match
+   
+  return searchedList; //return filtered array list
 }
 
 export function sort(type) {
   if (type == "ascending") {
-      
+      newsList.sort(); //default sort is in ascending order
+
   } else {
-    
+      newsList.sort(); //default sort is in ascending order
+      newsList.reverse(); // reverse to have it in descending order
   }
   return newsList;
 }
+
+//needed to install live server encountered error on chrome browser
+//npm install -g live-server
+//live-server
